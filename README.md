@@ -27,6 +27,6 @@ host: database
 port: 3306
 
 ## Documentation
-Refer to Lando's extensive [documentation](https://docs.lando.de).
-
+Refer to Lando's extensive [documentation](https://docs.lando.dev).
+```
 # [STAFFLINK](https://stafflink.com.au/real-estate-web-design/)
