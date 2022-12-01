@@ -1,0 +1,35 @@
+# Replace {MY_SITE} with your site title. eg, do a search & replace in VSCode for {MY_SITE} and replace with websitename.
+name: MY_SITE
+recipe: wordpress
+config:
+  webroot: public
+  php: '8.0'
+  via: nginx
+  xdebug: true
+services:
+  php:
+    type: php:8.0
+    via: nginx
+  node:
+    type: node
+  phpmyadmin:
+    type: phpmyadmin
+    ssl: true
+    sslExpose: false
+    hosts:
+      - database
+  mailhog:
+    type: mailhog
+    ssl: true
+    sslExpose: false
+    hogfrom:
+      - appserver
+    appserver:
+      run:
+  redis:
+    type: redis
+proxy:
+  mailhog:
+    - mail.{MY_SITE}.lndo.site
+  phpmyadmin:
+    - db.{MY_SITE}.lndo.site
